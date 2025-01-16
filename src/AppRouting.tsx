@@ -1,14 +1,15 @@
 import React from "react";
-import { Route, Router, Routes } from "react-router-dom";
-import Home from "./pages/Home/Pages/Home";
+import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
+import SignInSide from "./modules/Auth/pages/signin";
+import Home from "./pages/Home/Pages/Home";
 
 const AppRouting: React.FC = () => {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/login" element={<SignInSide />} />
         {/* أضف المزيد من الصفحات هنا */}
       </Routes>
     </Layout>
