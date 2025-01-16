@@ -1,13 +1,36 @@
-import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 import Stack from "@mui/material/Stack";
 import Content from "../components/Content";
 import SignInCard from "../components/SigninCard";
+import d from "../../../assets/images/sss.png";
+import SignUp from "../components/forms/SignUp";
 
 export default function SignInSide(props: { disableCustomTheme?: boolean }) {
+  const textResources = {
+    signInTitle: "Sign in",
+    nameLabel: "Name",
+    emailLabel: "Email",
+    phoneNumberLabel: "Phone Number",
+    passwordLabel: "Password",
+    forgotPassword: "Forgot your password?",
+    rememberMe: "Remember me",
+    signUpPrompt: "Don't have an account? ",
+    signUpLinkText: "Sign up",
+    submitButton: "Sign in",
+    namePlaceholder: "Name",
+    emailPlaceholder: "your@email.com",
+    phoneNumberPlaceholder: "0963969862620",
+    passwordPlaceholder: "••••••",
+    emailErrorMessage: "Please enter a valid email address.",
+    passwordErrorMessage: "Password must be at least 6 characters long.",
+  };
+
+  const image = {
+    src: d,
+    alt: "Description of the image",
+  };
+
   return (
     <>
-      {/* <ColorModeSelect sx={{ position: 'fixed', top: '1rem', right: '1rem' }} /> */}
       <Stack
         direction="column"
         component="main"
@@ -16,26 +39,9 @@ export default function SignInSide(props: { disableCustomTheme?: boolean }) {
           {
             justifyContent: "center",
             height: "calc((1 - var(--template-frame-height, 0)) * 100%)",
-            // marginTop: "max(40px - var(--template-frame-height, 0px), 0px)",
-            marginTop: "10rem", 
+            marginTop: "10rem",
             minHeight: "100%",
           },
-          (theme) => ({
-            "&::before": {
-              content: '""',
-              display: "block",
-              position: "absolute",
-              zIndex: -1,
-              inset: 0,
-              backgroundImage:
-                "radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))",
-              backgroundRepeat: "no-repeat",
-              ...theme.applyStyles("dark", {
-                backgroundImage:
-                  "radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))",
-              }),
-            },
-          }),
         ]}
       >
         <Stack
@@ -56,8 +62,10 @@ export default function SignInSide(props: { disableCustomTheme?: boolean }) {
               m: "auto",
             }}
           >
-            <Content />
-            <SignInCard />
+            <Content src={image.src} alt={image.alt} />
+            <SignInCard textResources={textResources}>
+              <SignUp textResources={textResources} handleSubmit={() => {}} />
+            </SignInCard>
           </Stack>
         </Stack>
       </Stack>
