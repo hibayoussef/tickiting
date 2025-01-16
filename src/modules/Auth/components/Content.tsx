@@ -1,10 +1,5 @@
 import Stack from "@mui/material/Stack";
-
-interface ContentProps {
-  src: string;
-  alt: string;
-  maxWidth?: number;
-}
+import { ContentProps } from "../../../types/formTypes";
 
 export default function Content({ src, alt, maxWidth = 450 }: ContentProps) {
   return (

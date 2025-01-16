@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
-import SignInSide from "./modules/Auth/pages/signin";
+import SignInSide from "./modules/Auth/pages/SignUp";
 import Home from "./pages/Home/Pages/Home";
 
 const AppRouting: React.FC = () => {

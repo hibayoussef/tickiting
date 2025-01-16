@@ -1,14 +1,8 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import MuiCard from '@mui/material/Card';
-import Checkbox from '@mui/material/Checkbox';
-import FormLabel from '@mui/material/FormLabel';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
+import * as React from 'react';
 import SitemarkIcon from '../../../components/images/SitemarkIcon';
 
 const Card = styled(MuiCard)(({ theme }) => ({
@@ -46,30 +40,6 @@ interface SignInCardProps {
 }
 
 const SignInCard: React.FC<SignInCardProps> = ({ textResources, children, renderForm }) => {
-  const [emailError, setEmailError] = React.useState(false);
-  const [passwordError, setPasswordError] = React.useState(false);
-
-  const validateInputs = () => {
-    const email = document.getElementById('email') as HTMLInputElement;
-    const password = document.getElementById('password') as HTMLInputElement;
-    let isValid = true;
-
-    if (!email.value || !/\S+@\S+\.\S+/.test(email.value)) {
-      setEmailError(true);
-      isValid = false;
-    } else {
-      setEmailError(false);
-    }
-
-    if (!password.value || password.value.length < 6) {
-      setPasswordError(true);
-      isValid = false;
-    } else {
-      setPasswordError(false);
-    }
-
-    return isValid;
-  };
 
   return (
     <Card variant="outlined">
@@ -84,23 +54,9 @@ const SignInCard: React.FC<SignInCardProps> = ({ textResources, children, render
         {textResources.signInTitle}
       </Typography>
 
-      {children || (renderForm && renderForm(validateInputs))}
+      {children}
 
-      <FormControlLabel
-        control={<Checkbox value="remember" color="primary" />}
-        label={textResources.rememberMe}
-      />
-      <Button type="submit" fullWidth variant="contained" onClick={validateInputs}>
-        {textResources.submitButton}
-      </Button>
-      <Typography sx={{ textAlign: 'center' }}>
-        {textResources.signUpPrompt}{' '}
-        <span>
-          <Link href="/material-ui/getting-started/templates/sign-in/" variant="body2">
-            {textResources.signUpLinkText}
-          </Link>
-        </span>
-      </Typography>
+    
     </Card>
   );
 };

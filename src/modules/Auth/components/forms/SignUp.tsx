@@ -1,20 +1,7 @@
-import { Box, Button, FormControl, FormLabel, TextField } from '@mui/material';
+import { Box, Button, Checkbox, FormControl, FormControlLabel, FormLabel, TextField } from '@mui/material';
 import React from 'react';
+import { SignUpFormProps } from '../../../../types/formTypes';
 
-interface SignUpFormProps {
-  textResources: {
-    nameLabel: string;
-    emailLabel: string;
-    phoneNumberLabel: string;
-    passwordLabel: string;
-    submitButton: string;
-    namePlaceholder: string;
-    emailPlaceholder: string;
-    phoneNumberPlaceholder: string;
-    passwordPlaceholder: string;
-  };
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-}
 
 const SignUp: React.FC<SignUpFormProps> = ({ textResources, handleSubmit }) => {
   return (
@@ -76,9 +63,26 @@ const SignUp: React.FC<SignUpFormProps> = ({ textResources, handleSubmit }) => {
           variant="outlined"
         />
       </FormControl>
-      <Button type="submit" fullWidth variant="contained">
+      {/* <Button type="submit" fullWidth variant="contained">
+        {textResources.submitButton}
+      </Button> */}
+      <FormControlLabel
+        control={<Checkbox value="remember" color="primary" />}
+        label={textResources.rememberMe}
+      />
+      <Button type="submit" fullWidth variant="contained" 
+      // onClick={validateInputs}
+      >
         {textResources.submitButton}
       </Button>
+      {/* <Typography sx={{ textAlign: 'center' }}>
+        {textResources.signUpPrompt}{' '}
+        <span>
+          <Link href="/material-ui/getting-started/templates/sign-in/" variant="body2">
+            {textResources.signUpLinkText}
+          </Link>
+        </span>
+      </Typography> */}
     </Box>
   );
 };
