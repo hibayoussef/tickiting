@@ -53,10 +53,7 @@ const SignInCard: React.FC<SignInCardProps> = ({ textResources, children, render
       >
         {textResources.signInTitle}
       </Typography>
-
       {children}
-
-    
     </Card>
   );
 };
