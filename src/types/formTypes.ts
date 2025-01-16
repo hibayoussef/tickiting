@@ -12,6 +12,7 @@ export interface ContentProps {
 
 export interface SignUpFormProps {
   textResources: {
+    title: string; 
     nameLabel: string;
     emailLabel: string;
     phoneNumberLabel: string;
@@ -22,6 +23,16 @@ export interface SignUpFormProps {
     phoneNumberPlaceholder: string;
     passwordPlaceholder: string;
     rememberMe: string;
+  };
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+}
+
+export interface ForgotPasswordFormProps {
+  textResources: {
+    title: string; 
+    emailLabel: string;
+    submitButton: string;
+    emailPlaceholder: string;
   };
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }

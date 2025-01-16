@@ -1,11 +1,11 @@
-import d from "../../../assets/images/sss.png";
+import SignUpImage from "../../../assets/images/create-account.png";
+import FormContent from "../components/FormContent";
 import SignUpForm from "../components/forms/SignUp";
-import SignInCard from "../components/SigninCard";
 import CenterLayout from "../layout/CenterLayout";
 
 export default function SignUp(props: { disableCustomTheme?: boolean }) {
   const textResources = {
-    signInTitle: "Sign in",
+    title: "Create New Account",
     nameLabel: "Name",
     emailLabel: "Email",
     phoneNumberLabel: "Phone Number",
@@ -24,16 +24,15 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
   };
 
   const image = {
-    src: d,
+    src: SignUpImage,
     alt: "Description of the image",
   };
 
   return (
     <CenterLayout image={image.src} alt={image.alt}>
-      <SignInCard textResources={textResources}>
+      <FormContent textResources={textResources}>
         <SignUpForm textResources={textResources} handleSubmit={() => {}} />
-      </SignInCard>
+      </FormContent>
     </CenterLayout>
   );
 }
-

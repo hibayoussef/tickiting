@@ -1,14 +1,6 @@
 import { Box, Button, FormControl, FormLabel, TextField } from "@mui/material";
 import React from "react";
-
-interface ForgotPasswordFormProps {
-  textResources: {
-    emailLabel: string;
-    submitButton: string;
-    emailPlaceholder: string;
-  };
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-}
+import type { ForgotPasswordFormProps } from "../../../../types/formTypes";
 
 const ForgotPassword: React.FC<ForgotPasswordFormProps> = ({
   textResources,
