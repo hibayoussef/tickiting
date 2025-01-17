@@ -1,4 +1,5 @@
 import Stack from "@mui/material/Stack";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { ContentProps } from "../../../types/formTypes";
 
 export default function Content({ src, alt, maxWidth = 450 }: ContentProps) {
