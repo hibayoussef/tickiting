@@ -1,22 +1,18 @@
 import { Box, Button, FormControl, FormLabel, TextField } from '@mui/material';
 import React from 'react';
 
-interface ForgotPasswordFormProps {
+interface SignInFormProps {
   textResources: {
-    nameLabel: string;
     emailLabel: string;
-    phoneNumberLabel: string;
     passwordLabel: string;
     submitButton: string;
-    namePlaceholder: string;
     emailPlaceholder: string;
-    phoneNumberPlaceholder: string;
     passwordPlaceholder: string;
   };
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const ForgotPassword: React.FC<ForgotPasswordFormProps> = ({ textResources, handleSubmit }) => {
+const SignIn: React.FC<SignInFormProps> = ({ textResources, handleSubmit }) => {
   return (
     <Box
       component="form"
@@ -24,20 +20,7 @@ const ForgotPassword: React.FC<ForgotPasswordFormProps> = ({ textResources, hand
       noValidate
       sx={{ display: 'flex', flexDirection: 'column', width: '100%', gap: 2 }}
     >
-      <FormControl>
-        <FormLabel htmlFor="name">{textResources.nameLabel}</FormLabel>
-        <TextField
-          id="name"
-          type="text"
-          name="name"
-          placeholder={textResources.namePlaceholder}
-          autoComplete="name"
-          autoFocus
-          required
-          fullWidth
-          variant="outlined"
-        />
-      </FormControl>
+     
       <FormControl>
         <FormLabel htmlFor="email">{textResources.emailLabel}</FormLabel>
         <TextField
@@ -51,18 +34,7 @@ const ForgotPassword: React.FC<ForgotPasswordFormProps> = ({ textResources, hand
           variant="outlined"
         />
       </FormControl>
-      <FormControl>
-        <FormLabel htmlFor="phone-number">{textResources.phoneNumberLabel}</FormLabel>
-        <TextField
-          id="phone-number"
-          type="tel"
-          name="phone-number"
-          placeholder={textResources.phoneNumberPlaceholder}
-          required
-          fullWidth
-          variant="outlined"
-        />
-      </FormControl>
+      
       <FormControl>
         <FormLabel htmlFor="password">{textResources.passwordLabel}</FormLabel>
         <TextField
@@ -83,4 +55,4 @@ const ForgotPassword: React.FC<ForgotPasswordFormProps> = ({ textResources, hand
   );
 };
 
-export default ForgotPassword;
+export default SignIn;
