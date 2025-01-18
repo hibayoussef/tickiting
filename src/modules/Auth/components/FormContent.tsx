@@ -24,23 +24,13 @@ const Card = styled(MuiCard)(({ theme }) => ({
 }));
 
 interface SignInCardProps {
-  textResources: {
-    title?: string;
-    emailLabel?: string;
-    passwordLabel?: string;
-    submitButton?: string;
-    emailErrorMessage?: string;
-    passwordErrorMessage?: string;
-    rememberMe?: string;
-    signUpPrompt?: string;
-    signUpLinkText?: string;
-  };
+  title?: string;
   children?: React.ReactNode;
   renderForm?: (validateInputs: () => boolean) => React.ReactNode;
 }
 
 const FormContent: React.FC<SignInCardProps> = ({
-  textResources,
+  title,
   children,
   renderForm,
 }) => {
@@ -58,7 +48,7 @@ const FormContent: React.FC<SignInCardProps> = ({
           alt="Logo"
           style={{
             maxWidth: "100%",
-            height: "2.6rem"
+            height: "2.6rem",
           }}
         />
       </Box>
@@ -72,7 +62,7 @@ const FormContent: React.FC<SignInCardProps> = ({
           marginBottom: 3,
         }}
       >
-        {textResources.title}
+        {title}
       </Typography>
       {children}
     </Card>

@@ -1,10 +1,13 @@
-import { Stack } from "@mui/material";
+import { Hidden, Stack } from "@mui/material";
 import React from "react";
 import Content from "../components/Content"; // استيراد مكون Content
 import { CenterLayoutProps } from "../../../types/formTypes";
 
-
-const CenterLayout: React.FC<CenterLayoutProps> = ({ children, image, alt }) => {
+const CenterLayout: React.FC<CenterLayoutProps> = ({
+  children,
+  image,
+  alt,
+}) => {
   return (
     <Stack
       direction="column"
@@ -35,7 +38,8 @@ const CenterLayout: React.FC<CenterLayoutProps> = ({ children, image, alt }) => 
             m: "auto",
           }}
         >
-          {image && <Content src={image} alt={alt} />}
+          <Hidden mdDown>{image && <Content src={image} alt={alt} />}</Hidden>
+
           {children}
         </Stack>
       </Stack>

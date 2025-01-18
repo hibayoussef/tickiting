@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import SitemarkIcon from "../images/SitemarkIcon";
 import { useNavigate } from "react-router-dom";
+import SignIn from "../../modules/Auth/pages/SignIn";
 
 const StyledToolbar = styled(Toolbar)(({ theme }: any) => ({
   display: "flex",
@@ -92,9 +93,10 @@ export default function AppAppBar() {
               pr: 4,
             }}
           >
-            <Button color="primary" variant="text" size="small">
+            {/* <Button color="primary" variant="text" size="small">
               Login
-            </Button>
+            </Button> */}
+            <SignIn />
             <Button
               color="primary"
               variant="text"

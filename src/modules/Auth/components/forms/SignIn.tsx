@@ -1,47 +1,36 @@
 import { Box, Button, FormControl, FormLabel, TextField } from '@mui/material';
 import React from 'react';
+import type { FormProps } from '../../../../types/formTypes';
 
-interface SignInFormProps {
-  textResources: {
-    emailLabel: string;
-    passwordLabel: string;
-    submitButton: string;
-    emailPlaceholder: string;
-    passwordPlaceholder: string;
-  };
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-}
-
-const SignIn: React.FC<SignInFormProps> = ({ textResources, handleSubmit }) => {
+const SignIn: React.FC<FormProps> = ({ handleSubmit }) => {
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
       noValidate
-      sx={{ display: 'flex', flexDirection: 'column', width: '100%', gap: 2 }}
+      sx={{ display: "flex", flexDirection: "column", width: "100%", gap: 2 }}
     >
-     
       <FormControl>
-        <FormLabel htmlFor="email">{textResources.emailLabel}</FormLabel>
+        <FormLabel htmlFor="email">Email</FormLabel>
         <TextField
           id="email"
           type="email"
           name="email"
-          placeholder={textResources.emailPlaceholder}
+          placeholder="Enter Your Email"
           autoComplete="email"
           required
           fullWidth
           variant="outlined"
         />
       </FormControl>
-      
+
       <FormControl>
-        <FormLabel htmlFor="password">{textResources.passwordLabel}</FormLabel>
+        <FormLabel htmlFor="password">Password</FormLabel>
         <TextField
           id="password"
           type="password"
           name="password"
-          placeholder={textResources.passwordPlaceholder}
+          placeholder="Enter Your Password"
           autoComplete="current-password"
           required
           fullWidth
@@ -49,7 +38,7 @@ const SignIn: React.FC<SignInFormProps> = ({ textResources, handleSubmit }) => {
         />
       </FormControl>
       <Button type="submit" fullWidth variant="contained">
-        {textResources.submitButton}
+        Sign In
       </Button>
     </Box>
   );

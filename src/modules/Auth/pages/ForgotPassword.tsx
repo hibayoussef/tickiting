@@ -6,13 +6,6 @@ import CenterLayout from "../layout/CenterLayout";
 export default function ForgotPassword(props: {
   disableCustomTheme?: boolean;
 }) {
-  const textResources = {
-    title: "Forgot Password",
-    emailLabel: "Email",
-    submitButton: "Sign in",
-    emailPlaceholder: "your@email.com",
-  };
-
   const image = {
     src: ForgorPasswordImage,
     alt: "Description of the image",
@@ -20,11 +13,8 @@ export default function ForgotPassword(props: {
 
   return (
     <CenterLayout image={image.src} alt={image.alt}>
-      <FormContent textResources={textResources}>
-        <ForgotPasswordForm
-          textResources={textResources}
-          handleSubmit={() => {}}
-        />
+      <FormContent title="Forgot Password">
+        <ForgotPasswordForm handleSubmit={() => {}} />
       </FormContent>
     </CenterLayout>
   );

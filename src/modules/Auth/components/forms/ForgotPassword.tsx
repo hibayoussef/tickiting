@@ -1,10 +1,9 @@
 import { Box, Button, FormControl, FormLabel, TextField } from "@mui/material";
 import React from "react";
-import type { ForgotPasswordFormProps } from "../../../../types/formTypes";
+import type { FormProps } from "../../../../types/formTypes";
 
-const ForgotPassword: React.FC<ForgotPasswordFormProps> = ({
-  textResources,
-  handleSubmit,
+const ForgotPassword: React.FC<FormProps> = ({
+  handleSubmit
 }) => {
   return (
     <Box
@@ -14,12 +13,12 @@ const ForgotPassword: React.FC<ForgotPasswordFormProps> = ({
       sx={{ display: "flex", flexDirection: "column", width: "100%", gap: 2 }}
     >
       <FormControl>
-        <FormLabel htmlFor="email">{textResources.emailLabel}</FormLabel>
+        <FormLabel htmlFor="email">Email</FormLabel>
         <TextField
           id="email"
           type="email"
           name="email"
-          placeholder={textResources.emailPlaceholder}
+          placeholder="Enter Your Email Address"
           autoComplete="email"
           required
           fullWidth
@@ -28,7 +27,7 @@ const ForgotPassword: React.FC<ForgotPasswordFormProps> = ({
       </FormControl>
 
       <Button type="submit" fullWidth variant="contained">
-        {textResources.submitButton}
+        Save
       </Button>
     </Box>
   );

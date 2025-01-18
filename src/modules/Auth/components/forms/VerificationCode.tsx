@@ -6,13 +6,10 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState, useEffect } from "react";
-import { type VerificationCodeFormProps } from "../../../../types/formTypes";
+import React, { useEffect, useState } from "react";
+import { type FormProps } from "../../../../types/formTypes";
 
-const VerificationCode: React.FC<VerificationCodeFormProps> = ({
-  textResources,
-  handleSubmit,
-}) => {
+const VerificationCode: React.FC<FormProps> = ({ handleSubmit }) => {
   const [otp, setOtp] = useState<string[]>(["", "", "", ""]);
   const [timer, setTimer] = useState<number | null>(null);
 
@@ -57,7 +54,7 @@ const VerificationCode: React.FC<VerificationCodeFormProps> = ({
   return (
     <>
       <FormLabel sx={{ textAlign: "center" }}>
-        {textResources.verificationLabel}
+        "Click on the code that was sent to this email user @ gmail .com"
       </FormLabel>
       <Box
         component="form"
@@ -122,7 +119,7 @@ const VerificationCode: React.FC<VerificationCodeFormProps> = ({
         </FormControl>
 
         <Button type="submit" fullWidth variant="contained">
-          {textResources.submitButton}
+          Verify
         </Button>
 
         <Typography

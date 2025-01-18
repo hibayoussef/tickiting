@@ -8,11 +8,10 @@ import {
   TextField,
 } from "@mui/material";
 import React from "react";
-import { SignUpFormProps } from "../../../../types/formTypes";
+import type { FormProps } from "../../../../types/formTypes";
 
-const ResetPassword: React.FC<SignUpFormProps> = ({
-  textResources,
-  handleSubmit,
+const ResetPassword: React.FC<FormProps> = ({
+  handleSubmit
 }) => {
   return (
     <Box
@@ -22,12 +21,12 @@ const ResetPassword: React.FC<SignUpFormProps> = ({
       sx={{ display: "flex", flexDirection: "column", width: "100%", gap: 2 }}
     >
       <FormControl>
-        <FormLabel htmlFor="password">{textResources.passwordLabel}</FormLabel>
+        <FormLabel htmlFor="password">Password</FormLabel>
         <TextField
           id="password"
           type="password"
           name="password"
-          placeholder={textResources.passwordPlaceholder}
+          placeholder="Enter Your Password"
           autoComplete="current-password"
           required
           fullWidth
@@ -36,13 +35,13 @@ const ResetPassword: React.FC<SignUpFormProps> = ({
       </FormControl>
       <FormControl>
         <FormLabel htmlFor="confirm-password">
-          {textResources.passwordLabel}
+          Confirm Password
         </FormLabel>
         <TextField
           id="confirm-password"
           type="confirm-password"
           name="confirm-password"
-          placeholder={textResources.passwordPlaceholder}
+          placeholder="Please Enter your password again"
           autoComplete="confirm-password"
           required
           fullWidth
@@ -54,7 +53,7 @@ const ResetPassword: React.FC<SignUpFormProps> = ({
       </Button> */}
       <FormControlLabel
         control={<Checkbox value="remember" color="primary" />}
-        label={textResources.rememberMe}
+        label="remember Me"
       />
       <Button
         type="submit"
@@ -62,7 +61,7 @@ const ResetPassword: React.FC<SignUpFormProps> = ({
         variant="contained"
         // onClick={validateInputs}
       >
-        {textResources.submitButton}
+        Save
       </Button>
       {/* <Typography sx={{ textAlign: 'center' }}>
         {textResources.signUpPrompt}{' '}

@@ -1,23 +1,30 @@
-import { Box, Button, Checkbox, FormControl, FormControlLabel, FormLabel, TextField } from '@mui/material';
-import React from 'react';
-import { SignUpFormProps } from '../../../../types/formTypes';
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  TextField,
+} from "@mui/material";
+import React from "react";
+import { type FormProps } from "../../../../types/formTypes";
 
-
-const SignUp: React.FC<SignUpFormProps> = ({ textResources, handleSubmit }) => {
+const SignUp: React.FC<FormProps> = ({ handleSubmit }) => {
   return (
     <Box
       component="form"
       onSubmit={handleSubmit}
       noValidate
-      sx={{ display: 'flex', flexDirection: 'column', width: '100%', gap: 2 }}
+      sx={{ display: "flex", flexDirection: "column", width: "100%", gap: 2 }}
     >
       <FormControl>
-        <FormLabel htmlFor="name">{textResources.nameLabel}</FormLabel>
+        <FormLabel htmlFor="name">Name</FormLabel>
         <TextField
           id="name"
           type="text"
           name="name"
-          placeholder={textResources.namePlaceholder}
+          placeholder="Enter Your Name"
           autoComplete="name"
           autoFocus
           required
@@ -26,12 +33,12 @@ const SignUp: React.FC<SignUpFormProps> = ({ textResources, handleSubmit }) => {
         />
       </FormControl>
       <FormControl>
-        <FormLabel htmlFor="email">{textResources.emailLabel}</FormLabel>
+        <FormLabel htmlFor="email">Email</FormLabel>
         <TextField
           id="email"
           type="email"
           name="email"
-          placeholder={textResources.emailPlaceholder}
+          placeholder="Enter Your Email"
           autoComplete="email"
           required
           fullWidth
@@ -39,24 +46,24 @@ const SignUp: React.FC<SignUpFormProps> = ({ textResources, handleSubmit }) => {
         />
       </FormControl>
       <FormControl>
-        <FormLabel htmlFor="phone-number">{textResources.phoneNumberLabel}</FormLabel>
+        <FormLabel htmlFor="phone-number">Phone Number</FormLabel>
         <TextField
           id="phone-number"
           type="tel"
           name="phone-number"
-          placeholder={textResources.phoneNumberPlaceholder}
+          placeholder="Enter Your Phone Number"
           required
           fullWidth
           variant="outlined"
         />
       </FormControl>
       <FormControl>
-        <FormLabel htmlFor="password">{textResources.passwordLabel}</FormLabel>
+        <FormLabel htmlFor="password">Password</FormLabel>
         <TextField
           id="password"
           type="password"
           name="password"
-          placeholder={textResources.passwordPlaceholder}
+          placeholder="••••••"
           autoComplete="current-password"
           required
           fullWidth
@@ -68,12 +75,15 @@ const SignUp: React.FC<SignUpFormProps> = ({ textResources, handleSubmit }) => {
       </Button> */}
       <FormControlLabel
         control={<Checkbox value="remember" color="primary" />}
-        label={textResources.rememberMe}
+        label="Remember Me"
       />
-      <Button type="submit" fullWidth variant="contained" 
-      // onClick={validateInputs}
+      <Button
+        type="submit"
+        fullWidth
+        variant="contained"
+        // onClick={validateInputs}
       >
-        {textResources.submitButton}
+        Sign Up
       </Button>
       {/* <Typography sx={{ textAlign: 'center' }}>
         {textResources.signUpPrompt}{' '}

@@ -10,26 +10,13 @@ export interface ContentProps {
   maxWidth?: number;
 }
 
-export interface SignUpFormProps {
-  textResources: {
-    title: string;
-    nameLabel: string;
-    emailLabel: string;
-    phoneNumberLabel: string;
-    passwordLabel: string;
-    submitButton: string;
-    namePlaceholder: string;
-    emailPlaceholder: string;
-    phoneNumberPlaceholder: string;
-    passwordPlaceholder: string;
-    rememberMe: string;
-  };
+export interface FormProps {
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
 export interface ForgotPasswordFormProps {
   textResources: {
-    title: string;
+    title: string; 
     emailLabel: string;
     submitButton: string;
     emailPlaceholder: string;
@@ -45,3 +32,4 @@ export interface VerificationCodeFormProps {
   };
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
+
