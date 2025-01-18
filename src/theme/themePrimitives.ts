@@ -278,6 +278,7 @@ export const colorSchemes = {
       },
       text: {
         primary: gray[800],
+        title: gray[100],
         secondary: gray[600],
         warning: orange[400],
       },

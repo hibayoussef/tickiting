@@ -15,7 +15,7 @@ const Home = (props: { disableCustomTheme?: boolean }) => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "-20px", // لتحديد موقع القوس بالضبط بين الأقسام
+          bottom: "-293px",
           left: 0,
           width: "100%",
           height: "auto",
@@ -23,7 +23,7 @@ const Home = (props: { disableCustomTheme?: boolean }) => {
         }}
       >
         <img
-          src={E} // ضع مسار صورة القوس هنا
+          src={E}
           alt="divider"
           style={{ width: "100%" }}
         />

@@ -11,7 +11,7 @@ import QueryStatsRoundedIcon from "@mui/icons-material/QueryStatsRounded";
 import SettingsSuggestRoundedIcon from "@mui/icons-material/SettingsSuggestRounded";
 import SupportAgentRoundedIcon from "@mui/icons-material/SupportAgentRounded";
 import ThumbUpAltRoundedIcon from "@mui/icons-material/ThumbUpAltRounded";
-import { Button } from "@mui/material";
+import { Button, Link } from "@mui/material";
 import Group from "../../../assets/images/about-us.png";
 
 const items = [
@@ -60,8 +60,8 @@ export default function AboutUsSection() {
       sx={(theme) => ({
         width: "100%",
         height: "115vh",
-        marginTop: "2rem",
-        paddingTop: "4rem",
+        marginTop: "0.6rem",
+        paddingTop: "1rem",
         backgroundImage: `url(${Group})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -81,16 +81,17 @@ export default function AboutUsSection() {
       >
         <Box
           sx={{
-            paddingTop: "4rem", 
+            paddingTop: "4rem",
             width: { sm: "100%", md: "60%" },
             textAlign: { sm: "left", md: "center" },
           }}
         >
           <Typography component="h2" variant="h4" gutterBottom>
-            Why Choose the Ticket System?
+            Why Choose us?
           </Typography>
-          <Typography variant="body1" sx={{ color: "grey.400" }}>
-            Some of the features that make you choose the ticket system
+          <Typography variant="body1" sx={{ color: "grey.800" }}>
+            Some of the features that make you choose the{" "}
+            <Link color="#009CDF">ticket system</Link>
           </Typography>
         </Box>
         <Grid container spacing={3}>
