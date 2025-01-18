@@ -12,6 +12,7 @@ import SettingsSuggestRoundedIcon from "@mui/icons-material/SettingsSuggestRound
 import SupportAgentRoundedIcon from "@mui/icons-material/SupportAgentRounded";
 import ThumbUpAltRoundedIcon from "@mui/icons-material/ThumbUpAltRounded";
 import { Button } from "@mui/material";
+import Group from "../../../assets/images/about-us.png";
 
 const items = [
   {
@@ -56,14 +57,18 @@ export default function AboutUsSection() {
   return (
     <Box
       id="about-us"
-      sx={{
-        pt: { xs: 4, sm: 12 },
-        pb: { xs: 8, sm: 16 },
-        color: "white",
-        backgroundSize: "cover",
+      sx={(theme) => ({
+        width: "100%",
+        height: "115vh",
+        marginTop: "2rem",
+        paddingTop: "4rem",
+        backgroundImage: `url(${Group})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
+        backgroundSize: "cover",
+        // overflow: "hidden",
+        position: "relative",
+        // ...theme.applyStyles("dark", {}),
+      })}
     >
       <Container
         sx={{
@@ -76,6 +81,7 @@ export default function AboutUsSection() {
       >
         <Box
           sx={{
+            paddingTop: "4rem", 
             width: { sm: "100%", md: "60%" },
             textAlign: { sm: "left", md: "center" },
           }}
@@ -89,42 +95,43 @@ export default function AboutUsSection() {
         </Box>
         <Grid container spacing={3}>
           {items.map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} mb={5}>
-          <Card
-            sx={{
-              p: 3,
-              height: "100%",
-              backgroundColor: "grey.900", // خلفية سوداء
-              color: "white", // نص أبيض
-              borderColor: "hsla(220, 25%, 25%, 0.3)",
-              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
-              transition: "transform 0.3s ease",
-              "&:hover": {
-                transform: "scale(1.05)",
-              },
-            }}
-          >
-            <Stack direction="column" spacing={2}>
-              <Box sx={{ opacity: "50%", fontSize: "2rem" }}>{item.icon}</Box>
-              <Typography gutterBottom sx={{ fontWeight: "bold" }}>
-                {item.title}
-              </Typography>
-              <Box>
-                {/* هنا يتم عرض كل جملة في سطر جديد */}
-                <Typography variant="body2" sx={{ color: "grey.400" }}>
-                  Admission and Registration
-                </Typography>
-                <Typography variant="body2" sx={{ color: "grey.400" }}>
-                  Courses and Classes
-                </Typography>
-                <Typography variant="body2" sx={{ color: "grey.400" }}>
-                  Questions Bank and Exams
-                </Typography>
-              </Box>
-            </Stack>
-          </Card>
-        </Grid>
-        
+            <Grid item xs={12} sm={6} md={4} key={index} mb={5}>
+              <Card
+                sx={{
+                  p: 3,
+                  height: "100%",
+                  backgroundColor: "grey.900", // خلفية سوداء
+                  color: "white", // نص أبيض
+                  borderColor: "hsla(220, 25%, 25%, 0.3)",
+                  boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+                  transition: "transform 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                  },
+                }}
+              >
+                <Stack direction="column" spacing={2}>
+                  <Box sx={{ opacity: "50%", fontSize: "2rem" }}>
+                    {item.icon}
+                  </Box>
+                  <Typography gutterBottom sx={{ fontWeight: "bold" }}>
+                    {item.title}
+                  </Typography>
+                  <Box>
+                    {/* هنا يتم عرض كل جملة في سطر جديد */}
+                    <Typography variant="body2" sx={{ color: "grey.400" }}>
+                      Admission and Registration
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: "grey.400" }}>
+                      Courses and Classes
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: "grey.400" }}>
+                      Questions Bank and Exams
+                    </Typography>
+                  </Box>
+                </Stack>
+              </Card>
+            </Grid>
           ))}
         </Grid>
         <Button variant="contained" color="info" size="small">

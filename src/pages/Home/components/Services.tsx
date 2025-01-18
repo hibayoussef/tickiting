@@ -10,6 +10,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DocumentIcon from "@mui/icons-material/DescriptionRounded";
 
+import Group from "../../../assets/images/services.png";
 
 
 const services = [
@@ -43,20 +44,28 @@ export default function ServicesSection() {
   return (
     <Box
       sx={{
-        py: 8,
+        width: "100%",
+        height: "163vh",
         color: "white",
-        backgroundImage: "url('/path-to-your-background.jpg')",
+        backgroundImage: `url(${Group})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <Container>
         <Box textAlign="center" mb={5}>
-          <Typography component="h2" variant="h4" fontWeight="bold" gutterBottom>
+          <Typography
+            component="h2"
+            variant="h4"
+            fontWeight="bold"
+            gutterBottom
+          >
             Our Services
           </Typography>
           <Typography variant="body1" sx={{ color: "grey.400" }}>
-            Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor
+            Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do
+            Eiusmod Tempor
           </Typography>
         </Box>
         <Grid container spacing={3}>
@@ -92,7 +101,10 @@ export default function ServicesSection() {
                       </ListItemIcon>
                       <ListItemText
                         primary={item}
-                        primaryTypographyProps={{ variant: "body2", color: "grey.400" }}
+                        primaryTypographyProps={{
+                          variant: "body2",
+                          color: "grey.400",
+                        }}
                       />
                     </ListItem>
                   ))}

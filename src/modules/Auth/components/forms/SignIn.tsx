@@ -1,6 +1,14 @@
-import { Box, Button, FormControl, FormLabel, TextField } from '@mui/material';
-import React from 'react';
-import type { FormProps } from '../../../../types/formTypes';
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Link,
+  TextField,
+  Typography,
+} from "@mui/material";
+import React from "react";
+import type { FormProps } from "../../../../types/formTypes";
 
 const SignIn: React.FC<FormProps> = ({ handleSubmit }) => {
   return (
@@ -37,9 +45,26 @@ const SignIn: React.FC<FormProps> = ({ handleSubmit }) => {
           variant="outlined"
         />
       </FormControl>
-      <Button type="submit" fullWidth variant="contained">
+      <Button
+        type="submit"
+        fullWidth
+        variant="contained"
+        sx={{ backgroundColor: "#009CDF" }}
+      >
         Sign In
       </Button>
+      <Typography sx={{ textAlign: "center" }}>
+        Don't have an account?{" "}
+        <span>
+          <Link
+            href="/material-ui/getting-started/templates/sign-in/"
+            variant="body2"
+            color="#009CDF"
+          >
+            Sign Up
+          </Link>
+        </span>
+      </Typography>
     </Box>
   );
 };
