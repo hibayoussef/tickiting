@@ -3,7 +3,7 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-// import Group from "../../../assets/images/Group.png";
+import Group from "../../../assets/images/Group.png";
 
 const StyledBox = styled("div")(({ theme }) => ({
   alignSelf: "center",
@@ -26,7 +26,7 @@ const StyledBox = styled("div")(({ theme }) => ({
   },
   ...theme.applyStyles("dark", {
     boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
-    //  backgroundImage: `url(${Group})`,
+     backgroundImage: `url(${Group})`,
     borderColor: theme.palette.grey[700],
   }),
 }));
@@ -37,7 +37,7 @@ export default function WelcomeSection() {
       id="hero"
       sx={(theme) => ({
         width: "100%",
-        // backgroundImage: `url(${Group})`,
+        backgroundImage: `url(${Group})`,
         backgroundRepeat: "no-repeat",
         ...theme.applyStyles("dark", {}),
       })}

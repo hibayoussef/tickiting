@@ -12,6 +12,7 @@ import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import SitemarkIcon from "../images/SitemarkIcon";
+import { useNavigate } from "react-router-dom";
 
 const StyledToolbar = styled(Toolbar)(({ theme }: any) => ({
   display: "flex",
@@ -31,6 +32,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }: any) => ({
 }));
 
 export default function AppAppBar() {
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -50,8 +52,8 @@ export default function AppAppBar() {
     >
       <Container
         sx={{
-          maxWidth: "1473px !important", 
-          width: "100% !important"
+          maxWidth: "1473px !important",
+          width: "100% !important",
         }}
       >
         <StyledToolbar variant="dense" disableGutters>
@@ -87,16 +89,26 @@ export default function AppAppBar() {
               display: { xs: "none", md: "flex" },
               gap: 1,
               alignItems: "center",
-              pr: 4
+              pr: 4,
             }}
           >
             <Button color="primary" variant="text" size="small">
               Login
             </Button>
-            <Button color="primary" variant="text" size="small">
+            <Button
+              color="primary"
+              variant="text"
+              size="small"
+              onClick={() => navigate("/signup")}
+            >
               Register
             </Button>
-            <Button color="secondary" variant="contained" size="small" style={{ padding: "1.5rem 3rem"}}>
+            <Button
+              color="secondary"
+              variant="contained"
+              size="small"
+              style={{ padding: "1.5rem 3rem" }}
+            >
               Submit Ticket
             </Button>
           </Box>
