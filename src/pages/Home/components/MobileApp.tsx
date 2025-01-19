@@ -5,7 +5,7 @@ import MuiChip from "@mui/material/Chip";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import MobileApp from "../../../assets/images/mobile-app.png";
+import MobileApp from "../../../assets/images/mobile-phone.png";
 import { styled } from "@mui/material/styles";
 import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
 import AppStore from "../../../assets/images/app-store.png";
@@ -135,7 +135,7 @@ export default function MobileAppSection() {
             src={items[selectedItemIndex].image}
             alt={selectedFeature.title}
             style={{
-              maxWidth: "100%",
+              maxWidth: "68%",
               height: "auto",
               display: "block",
             }}
