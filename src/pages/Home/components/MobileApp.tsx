@@ -16,8 +16,7 @@ const items = [
     title: "Dashboard",
     description:
       "This item could provide a snapshot of the most important metrics or data points related to the product.",
-    imageLight: `url(${MobileApp})`,
-    imageDark: `url(${MobileApp})`,
+    image: MobileApp,
   },
 ];
 
@@ -79,29 +78,16 @@ export function MobileLayout({
           />
         ))}
       </Box>
-      <Card
-      //    variant="outlined"
-      >
+      <Card>
         <Box
-          sx={(theme) => ({
-            mb: 2,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            minHeight: 280,
-            backgroundImage: `url("/assets/images/mobile-app.png")`,
-            backgroundRepeat: "no-repeat",
-            ...theme.applyStyles("dark", {
-              backgroundImage: "var(--items-imageDark)",
-            }),
-          })}
-          style={
-            items[selectedItemIndex]
-              ? ({
-                  "--items-imageLight": items[selectedItemIndex].imageLight,
-                  "--items-imageDark": items[selectedItemIndex].imageDark,
-                } as any)
-              : {}
-          }
+          component="img"
+          src={items[selectedItemIndex].image}
+          alt={selectedFeature.title}
+          sx={{
+            width: "100%",
+            height: "auto",
+            display: "block",
+          }}
         />
         <Box sx={{ px: 2, pb: 2 }}>
           <Typography
@@ -141,38 +127,19 @@ export default function MobileAppSection() {
           sx={{
             display: { xs: "none", sm: "flex" },
             width: { xs: "100%", md: "70%" },
-            height: "var(--items-image-height)",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <Card
-            sx={{
-              height: "100%",
-              width: "100%",
-              display: { xs: "none", sm: "flex" },
-              pointerEvents: "none",
+          <img
+            src={items[selectedItemIndex].image}
+            alt={selectedFeature.title}
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+              display: "block",
             }}
-          >
-            <Box
-              sx={(theme) => ({
-                m: "auto",
-                width: 420,
-                height: 500,
-                backgroundSize: "contain",
-                backgroundImage: "var(--items-imageLight)",
-                ...theme.applyStyles("dark", {
-                  backgroundImage: "var(--items-imageDark)",
-                }),
-              })}
-              style={
-                items[selectedItemIndex]
-                  ? ({
-                      "--items-imageLight": items[selectedItemIndex].imageLight,
-                      "--items-imageDark": items[selectedItemIndex].imageDark,
-                    } as any)
-                  : {}
-              }
-            />
-          </Card>
+          />
         </Box>
         <div>
           <Box
@@ -184,8 +151,6 @@ export default function MobileAppSection() {
             }}
           >
             <Box
-              // component={Button}
-              // onClick={() => handleItemClick(index)}
               sx={[
                 (theme) => ({
                   pt: 10,

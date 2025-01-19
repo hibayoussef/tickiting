@@ -28,7 +28,6 @@ const Home = (props: { disableCustomTheme?: boolean }) => {
           style={{ width: "100%" }}
         />
       </Box>
-
       <AboutUsSection />
       <MobileAppSection />
       <ServicesSection />
