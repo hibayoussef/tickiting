@@ -1,28 +1,34 @@
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  TextField
+} from "@mui/material";
 import React from "react";
-import { Box, Button, Checkbox, FormControl, FormControlLabel, FormLabel, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { useSignUpValidation } from "../../validations/useSignUpValidation";
-
-// تعريف النوع المطلوب
-interface FormProps {
-  handleSubmit: () => void;
-}
+import { FormProps } from "../../../../types/formTypes";
+import { useSignUpValidation } from "../../validations/useFormsValidation";
 
 const SignUpForm: React.FC<FormProps> = ({ handleSubmit }) => {
   // استخدام الدالة لاستخراج الـ validation resolver
   const { validationResolver } = useSignUpValidation();
 
   // إعداد react-hook-form باستخدام resolver
-  const { register, handleSubmit: handleFormSubmit, formState: { errors } } = useForm({
+  const {
+    register,
+    handleSubmit: handleFormSubmit,
+    formState: { errors },
+  } = useForm({
     resolver: validationResolver, // استخدام resolver للتحقق من الصحة باستخدام yup
   });
 
   const onSubmit = (data: any) => {
     console.log("Form data:", data);
     // يمكن استدعاء handleSubmit من هنا
-    handleSubmit();
+    // handleSubmit();
   };
 
   return (
@@ -79,7 +85,9 @@ const SignUpForm: React.FC<FormProps> = ({ handleSubmit }) => {
           variant="outlined"
           {...register("phone_number")}
           error={!!errors["phone_number"]}
-          helperText={errors["phone_number"] ? errors["phone_number"].message : ""}
+          helperText={
+            errors["phone_number"] ? errors["phone_number"].message : ""
+          }
         />
       </FormControl>
 
@@ -99,18 +107,11 @@ const SignUpForm: React.FC<FormProps> = ({ handleSubmit }) => {
         />
       </FormControl>
 
-      {/* خيار "تذكرني" */}
       <FormControlLabel
         control={<Checkbox value="remember" color="primary" />}
         label="Remember Me"
       />
-
-      {/* زر التسجيل */}
-      <Button
-        type="submit"
-        fullWidth
-        variant="contained"
-      >
+      <Button type="submit" fullWidth variant="contained">
         Sign Up
       </Button>
     </Box>
