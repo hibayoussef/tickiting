@@ -101,9 +101,10 @@ export default function AboutUsSection() {
                 sx={{
                   p: 3,
                   height: "100%",
-                  backgroundColor: "grey.900", // خلفية سوداء
-                  color: "white", // نص أبيض
-                  borderColor: "hsla(220, 25%, 25%, 0.3)",
+                  backgroundColor: "#ffffff", // خلفية سوداء
+                  color: "gray.800", // نص أبيض
+                  borderRadius: "16px", 
+                  // borderColor: "hsla(220, 25%, 25%, 0.3)",
                   boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
                   transition: "transform 0.3s ease",
                   "&:hover": {

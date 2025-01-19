@@ -7,8 +7,8 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import MobileApp from "../../../assets/images/mobile-app.png";
 import { styled } from "@mui/material/styles";
-
 import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
+import AppStore from "../../../assets/images/app-store.png";
 
 const items = [
   {
@@ -80,8 +80,8 @@ export function MobileLayout({
         ))}
       </Box>
       <Card
-    //    variant="outlined"
-       >
+      //    variant="outlined"
+      >
         <Box
           sx={(theme) => ({
             mb: 2,
@@ -184,11 +184,11 @@ export default function MobileAppSection() {
             }}
           >
             <Box
-              component={Button}
+              // component={Button}
               // onClick={() => handleItemClick(index)}
               sx={[
                 (theme) => ({
-                  p: 2,
+                  pt: 10,
                   height: "100%",
                   width: "100%",
                 }),
@@ -208,11 +208,27 @@ export default function MobileAppSection() {
                   },
                 ]}
               >
-                <Typography variant="h6">Get the Mobile App</Typography>
+                <Typography variant="h4">Get the Mobile App</Typography>
                 <Typography variant="body2">
                   Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed
                   Do Eiusmod Tempor{" "}
                 </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                  }}
+                >
+                  <img
+                    src={AppStore}
+                    alt="Logo"
+                    style={{
+                      maxWidth: "100%",
+                      height: "3.6rem",
+                    }}
+                  />
+                </Box>
               </Box>
             </Box>
           </Box>
