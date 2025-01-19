@@ -1,100 +1,120 @@
-import {
-  Box,
-  Button,
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  TextField,
-} from "@mui/material";
 import React from "react";
-import { type FormProps } from "../../../../types/formTypes";
+import { Box, Button, Checkbox, FormControl, FormControlLabel, FormLabel, TextField } from "@mui/material";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useSignUpValidation } from "../../validations/useSignUpValidation";
 
-const SignUp: React.FC<FormProps> = ({ handleSubmit }) => {
+// تعريف النوع المطلوب
+interface FormProps {
+  handleSubmit: () => void;
+}
+
+const SignUpForm: React.FC<FormProps> = ({ handleSubmit }) => {
+  // استخدام الدالة لاستخراج الـ validation resolver
+  const { validationResolver } = useSignUpValidation();
+
+  // إعداد react-hook-form باستخدام resolver
+  const { register, handleSubmit: handleFormSubmit, formState: { errors } } = useForm({
+    resolver: validationResolver, // استخدام resolver للتحقق من الصحة باستخدام yup
+  });
+
+  const onSubmit = (data: any) => {
+    console.log("Form data:", data);
+    // يمكن استدعاء handleSubmit من هنا
+    handleSubmit();
+  };
+
   return (
     <Box
       component="form"
-      onSubmit={handleSubmit}
+      onSubmit={handleFormSubmit(onSubmit)}
       noValidate
       sx={{ display: "flex", flexDirection: "column", width: "100%", gap: 2 }}
     >
+      {/* حقل الاسم */}
       <FormControl>
         <FormLabel htmlFor="name">Name</FormLabel>
         <TextField
           id="name"
           type="text"
-          name="name"
           placeholder="Enter Your Name"
           autoComplete="name"
           autoFocus
           required
           fullWidth
           variant="outlined"
+          {...register("name")} // ربط الحقل مع react-hook-form
+          error={!!errors.name} // عرض الخطأ إذا كان هناك
+          helperText={errors.name ? errors.name.message : ""} // عرض رسالة الخطأ
         />
       </FormControl>
+
+      {/* حقل البريد الإلكتروني */}
       <FormControl>
         <FormLabel htmlFor="email">Email</FormLabel>
         <TextField
           id="email"
           type="email"
-          name="email"
           placeholder="Enter Your Email"
           autoComplete="email"
           required
           fullWidth
           variant="outlined"
+          {...register("email")} // ربط الحقل مع react-hook-form
+          error={!!errors.email} // عرض الخطأ إذا كان هناك
+          helperText={errors.email ? errors.email.message : ""} // عرض رسالة الخطأ
         />
       </FormControl>
+
+      {/* حقل رقم الهاتف */}
       <FormControl>
         <FormLabel htmlFor="phone-number">Phone Number</FormLabel>
         <TextField
           id="phone-number"
           type="tel"
-          name="phone-number"
           placeholder="Enter Your Phone Number"
           required
           fullWidth
           variant="outlined"
+          {...register("phone_number")}
+          error={!!errors["phone_number"]}
+          helperText={errors["phone_number"] ? errors["phone_number"].message : ""}
         />
       </FormControl>
+
       <FormControl>
         <FormLabel htmlFor="password">Password</FormLabel>
         <TextField
           id="password"
           type="password"
-          name="password"
           placeholder="••••••"
           autoComplete="current-password"
           required
           fullWidth
           variant="outlined"
+          {...register("password")}
+          error={!!errors.password}
+          helperText={errors.password ? errors.password.message : ""}
         />
       </FormControl>
-      {/* <Button type="submit" fullWidth variant="contained">
-        {textResources.submitButton}
-      </Button> */}
+
+      {/* خيار "تذكرني" */}
       <FormControlLabel
         control={<Checkbox value="remember" color="primary" />}
         label="Remember Me"
       />
+
+      {/* زر التسجيل */}
       <Button
         type="submit"
         fullWidth
         variant="contained"
-        // onClick={validateInputs}
       >
         Sign Up
       </Button>
-      {/* <Typography sx={{ textAlign: 'center' }}>
-        {textResources.signUpPrompt}{' '}
-        <span>
-          <Link href="/material-ui/getting-started/templates/sign-in/" variant="body2">
-            {textResources.signUpLinkText}
-          </Link>
-        </span>
-      </Typography> */}
     </Box>
   );
 };
 
-export default SignUp;
+export default SignUpForm;
