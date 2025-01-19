@@ -15,7 +15,7 @@ const Home = (props: { disableCustomTheme?: boolean }) => {
       <Box
         sx={{
           position: "absolute",
-          bottom: "-293px",
+          bottom: "-213px",
           left: 0,
           width: "100%",
           height: "auto",

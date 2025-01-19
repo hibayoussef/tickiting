@@ -39,7 +39,7 @@ export default function WelcomeSection() {
       id="hero"
       sx={{
         width: "100%",
-        height: "144vh",
+        height: "128vh",
         backgroundImage: `url(${Group})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
