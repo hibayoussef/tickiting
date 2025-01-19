@@ -31,8 +31,8 @@ export default function Footer() {
     <Box
       id="about-us"
       sx={{
-        pt: { xs: 4, sm: 12 },
-        pb: { xs: 8, sm: 16 },
+        pt: { xs: 2, sm: 6 },
+        pb: { xs: 4, sm: 8 }, 
         color: "white",
         bgcolor: "grey.900",
       }}
@@ -43,7 +43,7 @@ export default function Footer() {
           flexDirection: "column",
           alignItems: "center",
           gap: { xs: 4, sm: 8 },
-          py: { xs: 8, sm: 10 },
+          py: { xs: 8, sm: 1 },
           textAlign: { sm: "center", md: "left" },
         }}
       >
@@ -60,10 +60,11 @@ export default function Footer() {
               display: "flex",
               flexDirection: "column",
               gap: 4,
+              mt:"5rem", 
               minWidth: { xs: "100%", sm: "10%" },
             }}
           >
-            <Box sx={{ width: { xs: "100%", sm: "20%" } }}>
+            <Box sx={{ width: { xs: "100%", sm: "40%" } }}>
               <SitemarkIcon />
             </Box>
           </Box>
@@ -75,22 +76,22 @@ export default function Footer() {
               gap: 1,
             }}
           >
-            <Typography variant="body2" sx={{ fontWeight: "medium" }}>
+            <Typography variant="h6" sx={{ fontWeight: "medium" }}>
               Product
             </Typography>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               Features
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               Testimonials
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               Highlights
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               Pricing
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               FAQs
             </Link>
           </Box>
@@ -101,16 +102,16 @@ export default function Footer() {
               gap: 1,
             }}
           >
-            <Typography variant="body2" sx={{ fontWeight: "medium" }}>
+            <Typography variant="h6" sx={{ fontWeight: "medium" }}>
               Company
             </Typography>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               About us
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               Careers
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               Press
             </Link>
           </Box>
@@ -121,16 +122,16 @@ export default function Footer() {
               gap: 1,
             }}
           >
-            <Typography variant="body2" sx={{ fontWeight: "medium" }}>
+            <Typography variant="h6" sx={{ fontWeight: "medium" }}>
               Legal
             </Typography>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               Terms
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               Privacy
             </Link>
-            <Link color="text.secondary" variant="body2" href="#">
+            <Link color="#ffffff" variant="body2" href="#">
               Contact
             </Link>
           </Box>
@@ -142,7 +143,7 @@ export default function Footer() {
             >
               Join the newsletter
             </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary", mb: 2 }}>
+            <Typography variant="body2" sx={{ color: "#ffffff", mb: 2 }}>
               Subscribe for weekly updates. No spams ever!
             </Typography>
             <InputLabel htmlFor="email-newsletter">Email</InputLabel>

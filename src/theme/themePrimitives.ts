@@ -170,6 +170,7 @@ export const getDesignTokens = (mode: PaletteMode) => {
       text: {
         primary: gray[800],
         secondary: gray[600],
+        third: gray[100], 
         warning: orange[400],
         ...(mode === 'dark' && { primary: 'hsl(0, 0%, 100%)', secondary: gray[400] }),
       },

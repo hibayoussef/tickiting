@@ -10,8 +10,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DocumentIcon from "@mui/icons-material/DescriptionRounded";
 
-import Group from "../../../assets/images/services.png";
-
+import GroupImage from "../../../assets/images/services.png"; // استيراد الصورة
 
 const services = [
   {
@@ -45,54 +44,74 @@ export default function ServicesSection() {
     <Box
       sx={{
         width: "100%",
-        height: "163vh",
+        py: 10,
         color: "white",
-        backgroundImage: `url(${Group})`,
+        background: `linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 253, 253, 0.6)), url(${GroupImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
       <Container>
+        {/* العنوان الرئيسي */}
         <Box textAlign="center" mb={5}>
           <Typography
             component="h2"
             variant="h4"
             fontWeight="bold"
             gutterBottom
+            sx={{
+              textTransform: "uppercase",
+              letterSpacing: "2px",
+              color: "cyan",
+            }}
           >
             Our Services
           </Typography>
-          <Typography variant="body1" sx={{ color: "grey.400" }}>
+          <Typography variant="body1" sx={{ color: "grey.300" }}>
             Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do
             Eiusmod Tempor
           </Typography>
         </Box>
-        <Grid container spacing={3}>
+
+        {/* البطاقات */}
+        <Grid container spacing={4} justifyContent="center">
           {services.map((service, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index} mb={5}>
+            <Grid item xs={12} sm={6} md={4} key={index}>
               <Card
                 sx={{
                   p: 3,
-                  height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  backgroundColor: "rgba(0, 0, 0, 0.8)", // خلفية معتمة للبطاقة
                   color: "inherit",
-                  borderRadius: "16px",
-                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+                  borderRadius: "12px",
+                  boxShadow: "0 8px 15px rgba(0, 0, 0, 0.5)",
+                  height: "100%",
                 }}
               >
+                {/* العنوان */}
                 <Typography
                   variant="h6"
                   sx={{
                     fontWeight: "bold",
                     color: "cyan",
                     mb: 2,
-                    borderBottom: "4px solid cyan",
-                    display: "inline-block",
+                    position: "relative",
+                    pb: 1,
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      width: "30%",
+                      height: "3px",
+                      backgroundColor: "cyan",
+                    },
                   }}
                 >
                   {service.title}
                 </Typography>
+
+                {/* القائمة */}
                 <List>
                   {service.items.map((item, i) => (
                     <ListItem key={i} disablePadding>
@@ -103,7 +122,7 @@ export default function ServicesSection() {
                         primary={item}
                         primaryTypographyProps={{
                           variant: "body2",
-                          color: "grey.400",
+                          color: "grey.300",
                         }}
                       />
                     </ListItem>
